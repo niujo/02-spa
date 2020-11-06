@@ -1,0 +1,19 @@
+<h1>Arboles <small>De chiloé</small></h1>
+
+<div class="card-columns">
+
+    <div class="card animated fadeIn fast" *ngFor=" let arbol of arboles; let i= index">
+        <img [src]="arbol.img" class="card-img-top" [alt]="arbol.nombre">
+        <div class="card-body">
+          <h5 class="card-title">{{arbol.nombre}}</h5>
+          <p class="card-text">{{arbol.bio}}</p>
+          <p class="card-text"><small class="text-muted">{{arbol.ubicacion}}</small></p>
+        
+          <!--<button type="button" class="btn btn-primary btn-block">
+              ver más
+          </button>-->
+          <a [routerLink]="['/arbol',i]" class="btn btn-primary" >ver más</a>
+        </div>
+    </div>
+
+</div>
