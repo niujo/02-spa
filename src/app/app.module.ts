@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ArbolesComponent } from './components/arboles/arboles.component';
 import { ArbolComponent } from './components/arbol/arbol.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ArbolComponent } from './components/arbol/arbol.component';
     HomeComponent,
     FooterComponent,
     ArbolesComponent,
-    ArbolComponent
+    ArbolComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,

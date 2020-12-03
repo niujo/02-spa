@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 
+
 @Injectable()
 export class ArbolesService{
 
@@ -40,17 +41,35 @@ export class ArbolesService{
                 img: 'assets/img/araucaria.png',
                 ubicacion: 'chiloé'
             }
-    ]
+    ];
     constructor(){
         console.log('servicio esta listo');
     }
 
+    // tslint:disable-next-line: typedef
     getArboles() {
        return this.arboles;
     }
 
+    // tslint:disable-next-line: typedef
     getArbol( idx: string){
-        return this.arboles[idx]
+        return this.arboles[idx];
+    }
+
+    buscarArboles(termino: string): Arbol[]{
+
+        const arbolesArr: Arbol[] = [];
+        termino = termino.toLowerCase();
+
+        for ( const arbol of this.arboles) {
+
+            const nombre = arbol.nombre.toLowerCase();
+            if (nombre.indexOf(termino) >= 0 ){
+                arbolesArr.push(arbol);
+                console.log(typeof termino);
+            }
+        }
+        return arbolesArr;
     }
 }
 
@@ -59,4 +78,4 @@ export interface Arbol {
     bio: string;
     img: string;
     ubicacion: string;
-};
+}

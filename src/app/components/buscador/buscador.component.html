@@ -1,0 +1,28 @@
+<h1>Buscando <small>{{termino}}</small></h1>
+
+
+<div class="row" *ngIf="arboles.length==0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No existe resultados para la busqueda {{termino}}
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+
+    <div class="card animated fadeIn fast" *ngFor=" let arbol of arboles; let i= index">
+        <img [src]="arbol.img" class="card-img-top" [alt]="arbol.nombre">
+        <div class="card-body">
+          <h5 class="card-title">{{arbol.nombre}}</h5>
+          <p class="card-text">{{arbol.bio}}</p>
+          <p class="card-text"><small class="text-muted">{{arbol.ubicacion}}</small></p>
+        
+
+          <button class="btn btn-primary btn-block" [routerLink]="['/arboles']"> Regresar</button>
+         
+          <!-- <a [routerLink]="['/arbol',i]" class="btn btn-primary" >ver más</a> -->
+        </div>
+    </div>
+
+</div>

@@ -21,6 +21,7 @@ export class ArbolesComponent implements OnInit {
   }
 
   
+  // tslint:disable-next-line: typedef
   verArbol(idx: number){
     console.log(idx);
     this.router.navigate(['/arbol', idx]);
